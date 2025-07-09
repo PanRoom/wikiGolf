@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki Golf - マイページ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
-
     <header>
         <div class="header-container">
             <h1><a href="index.html">Wiki Golf</a></h1>
@@ -19,58 +19,30 @@
                 </ul>
             </nav>
             <div class="user-area">
-                <div id="user-info" style="display:none;">
-                    <p>ようこそ、<span id="login-username"></span> さん</p>
-                    <button id="logout-button">ログアウト</button>
-                </div>
-                <div id="guest-area">
-                    <button id="login-modal-button">ログイン / 新規登録</button>
-                </div>
+                <div id="user-info" style="display:none;"><p>ようこそ、<span id="login-username"></span> さん</p><button id="logout-button">ログアウト</button></div>
+                <div id="guest-area"><button id="login-modal-button">ログイン / 新規登録</button></div>
             </div>
         </div>
     </header>
-
     <div id="auth-modal" class="modal" style="display:none;">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <form id="login-form">
-                <h3>ログイン</h3>
-                <input type="text" id="login-username-input" placeholder="ユーザー名" required>
-                <input type="password" id="login-password-input" placeholder="パスワード" required>
-                <button type="submit">ログイン</button>
-                <p class="form-switch">新規登録は<a href="#" id="show-register-form">こちら</a></p>
-            </form>
-            <form id="register-form" style="display:none;">
-                <h3>新規登録</h3>
-                <input type="text" id="register-username-input" placeholder="ユーザー名" required>
-                <input type="password" id="register-password-input" placeholder="パスワード" required>
-                <button type="submit">登録する</button>
-                <p class="form-switch">ログインは<a href="#" id="show-login-form">こちら</a></p>
-            </form>
+            <form id="login-form"><h3>ログイン</h3><input type="text" id="login-username-input" placeholder="ユーザー名" required><input type="password" id="login-password-input" placeholder="パスワード" required><button type="submit">ログイン</button><p class="form-switch">新規登録は<a href="#" id="show-register-form">こちら</a></p></form>
+            <form id="register-form" style="display:none;"><h3>新規登録</h3><input type="text" id="register-username-input" placeholder="ユーザー名" required><input type="password" id="register-password-input" placeholder="パスワード" required><button type="submit">登録する</button><p class="form-switch">ログインは<a href="#" id="show-login-form">こちら</a></p></form>
             <p id="auth-error" class="error-message"></p>
         </div>
     </div>
-
     <main class="page-container">
         <h2>マイページ</h2>
         <p><span id="mypage-username"></span> さんのプレイ記録</p>
         <div class="table-container">
             <table id="my-scores-table">
-                <thead>
-                    <tr>
-                        <th>プレイ日時</th>
-                        <th>スタート</th>
-                        <th>ゴール</th>
-                        <th>クリック数</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    </tbody>
+                <thead><tr><th>プレイ日時</th><th>スタート</th><th>ゴール</th><th>クリック数</th></tr></thead>
+                <tbody></tbody>
             </table>
         </div>
     </main>
-
-    <script src="main.js"></script>
-    <script src="mypage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/mypage.js"></script>
 </body>
 </html>

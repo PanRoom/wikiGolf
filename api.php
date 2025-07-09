@@ -1,12 +1,12 @@
 <?php
-// api.php
 ini_set('display_errors', 0);
 error_reporting(E_ALL);
 
 session_start();
 header('Content-Type: application/json; charset=utf-8');
 
-require_once 'db_connect.php';
+// ★★★ パスが変更されています ★★★
+require_once 'includes/db_connect.php';
 
 $action = $_GET['action'] ?? '';
 
@@ -93,4 +93,3 @@ function handle_get_my_scores($pdo) {
     $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($scores);
 }
-?>

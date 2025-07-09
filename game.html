@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki Golf - ゲームプレイ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 
@@ -19,13 +20,8 @@
                 </ul>
             </nav>
             <div class="user-area">
-                <div id="user-info" style="display:none;">
-                    <p>ようこそ、<span id="login-username"></span> さん</p>
-                    <button id="logout-button">ログアウト</button>
-                </div>
-                <div id="guest-area">
-                    <button id="login-modal-button">ログイン / 新規登録</button>
-                </div>
+                <div id="user-info" style="display:none;"><p>ようこそ、<span id="login-username"></span> さん</p><button id="logout-button">ログアウト</button></div>
+                <div id="guest-area"><button id="login-modal-button">ログイン / 新規登録</button></div>
             </div>
         </div>
     </header>
@@ -33,25 +29,28 @@
     <div id="auth-modal" class="modal" style="display:none;">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <form id="login-form">
-                <h3>ログイン</h3>
-                <input type="text" id="login-username-input" placeholder="ユーザー名" required>
-                <input type="password" id="login-password-input" placeholder="パスワード" required>
-                <button type="submit">ログイン</button>
-                <p class="form-switch">新規登録は<a href="#" id="show-register-form">こちら</a></p>
-            </form>
-            <form id="register-form" style="display:none;">
-                <h3>新規登録</h3>
-                <input type="text" id="register-username-input" placeholder="ユーザー名" required>
-                <input type="password" id="register-password-input" placeholder="パスワード" required>
-                <button type="submit">登録する</button>
-                <p class="form-switch">ログインは<a href="#" id="show-login-form">こちら</a></p>
-            </form>
+            <form id="login-form"><h3>ログイン</h3><input type="text" id="login-username-input" placeholder="ユーザー名" required><input type="password" id="login-password-input" placeholder="パスワード" required><button type="submit">ログイン</button><p class="form-switch">新規登録は<a href="#" id="show-register-form">こちら</a></p></form>
+            <form id="register-form" style="display:none;"><h3>新規登録</h3><input type="text" id="register-username-input" placeholder="ユーザー名" required><input type="password" id="register-password-input" placeholder="パスワード" required><button type="submit">登録する</button><p class="form-switch">ログインは<a href="#" id="show-login-form">こちら</a></p></form>
             <p id="auth-error" class="error-message"></p>
         </div>
     </div>
 
     <main class="page-container">
+        <div class="theme-selector">
+            <h2>お題を選択</h2>
+            <div class="selector-group">
+                <label for="start-select">スタートページ:</label>
+                <select id="start-select"></select>
+            </div>
+            <div class="selector-group">
+                <label for="goal-select">ゴールページ:</label>
+                <select id="goal-select"></select>
+            </div>
+            <button id="random-button" class="button-secondary">ランダムで選ぶ</button>
+        </div>
+
+        <hr class="divider">
+
         <div class="game-info">
             <p><strong>スタート:</strong> <span id="start-page"></span></p>
             <p><strong>ゴール:</strong> <span id="goal-page"></span></p>
@@ -60,16 +59,17 @@
             <p>クリック数: <span id="click-count">0</span></p>
             <p>現在のページ: <span id="current-page"></span></p>
         </div>
-        <button id="start-button" class="button-primary">ゲーム開始</button>
+        <button id="start-button" class="button-primary">このお題でゲーム開始</button>
+        
         <div id="wiki-container">
             <div id="wiki-content">
-                <p>上の「ゲーム開始」ボタンを押してください。</p>
+                <p>上のお題を選択するか、「ランダムで選ぶ」ボタンを押してからゲームを開始してください。</p>
             </div>
         </div>
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
-    <script src="main.js"></script>
-    <script src="game.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/game.js"></script>
 </body>
 </html>
