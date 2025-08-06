@@ -9,6 +9,10 @@
 </head>
 <body>
 
+    <div id="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
     <header>
         <div class="header-container">
             <h1><a href="index.html">Wiki Golf</a></h1>
@@ -57,6 +61,7 @@
         </div>
         <div class="game-status">
             <p>クリック数: <span id="click-count">0</span></p>
+            <p>タイム: <span id="timer">0</span> 秒</p>
             <p>現在のページ: <span id="current-page"></span></p>
         </div>
         <button id="start-button" class="button-primary">このお題でゲーム開始</button>
@@ -64,6 +69,14 @@
         <div id="wiki-container">
             <div id="wiki-content">
                 <p>上のお題を選択するか、「ランダムで選ぶ」ボタンを押してからゲームを開始してください。</p>
+            </div>
+        </div>
+
+        <div id="theme-ranking-container" style="display: none;">
+            <hr class="divider">
+            <h3>このお題のランキング (TOP 5)</h3>
+            <div class="ranking-area">
+                <ol id="theme-ranking-list"></ol>
             </div>
         </div>
     </main>
